@@ -22,11 +22,14 @@ mv kubens /usr/local/bin/
 
 # kube-ps1
 wget https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
-
 echo "source /root/kube-ps1.sh" >> ~/.bashrc
 echo "PS1='[\u@\h \W \$(kube_ps1)]\$ '" >> ~/.bashrc
 echo "export KUBE_PS1_SYMBOL_ENABLE=false" >> ~/.bashrc
 echo "export KUBE_PS1_CONTEXT_ENABLE=false" >> ~/.bashrc
 echo "export KUBE_PS1_PREFIX=''" >> ~/.bashrc
 echo "export KUBE_PS1_SUFFIX=''" >> ~/.bashrc
+
+# bash
+echo "source <(kubectl completion bash)" >> ~/.bashrc 
+echo "source /usr/share/bash-completion/bash_completion" >> ~/.bashrc
 source ~/.bashrc
