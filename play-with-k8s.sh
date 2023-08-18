@@ -3,7 +3,7 @@
 # play with kubernetes init (https://labs.play-with-k8s.com/)
 
 # basic
-yum install -y wget vim 
+yum install -y wget vim bash-completion
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -31,5 +31,6 @@ echo "export KUBE_PS1_SUFFIX=''" >> ~/.bashrc
 
 # bash
 echo "source <(kubectl completion bash)" >> ~/.bashrc 
+echo "source <(helm completion bash)" >> ~/.bashrc 
 echo "source /usr/share/bash-completion/bash_completion" >> ~/.bashrc
 source ~/.bashrc
