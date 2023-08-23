@@ -3,9 +3,13 @@
 "==============================================================================
 
 " 设置 vimrc 修改保存后立刻生效，不用在重新打开
+" 建议配置完成后将这个关闭，否则配置多了之后会很卡
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " 关闭兼容模式
 set nocompatible
+
+set paste
 
 set nu " 设置行号
 set cursorline "突出显示当前行
@@ -74,8 +78,27 @@ Plug 'vim-airline/vim-airline'
 " 可以在文档中显示 git 信息
 Plug 'airblade/vim-gitgutter'
 
+Plug 'crusoexia/vim-monokai'
+Plug 'KeitaNakamura/neodark.vim'
+
 " 插件结束的位置，插件全部放在此行上面
 call plug#end()
+
+"==============================================================================
+"  其他插件配置
+"==============================================================================
+
+" tab 标签页切换快捷键
+:nn <Leader>1 1gt
+:nn <Leader>2 2gt
+:nn <Leader>3 3gt
+:nn <Leader>4 4gt
+:nn <Leader>5 5gt
+:nn <Leader>6 6gt
+:nn <Leader>7 7gt
+:nn <Leader>8 8gt
+:nn <Leader>9 8gt
+:nn <Leader>0 :tablast<CR>
 
 "==============================================================================
 " NERDTree 插件
@@ -100,17 +123,10 @@ let NERDTreeShowBookmarks=2
 let g:nerdtree_tabs_open_on_console_startup=1
 
 "==============================================================================
-"  其他插件配置
+" 主题配色
 "==============================================================================
 
-" tab 标签页切换快捷键
-:nn <Leader>1 1gt
-:nn <Leader>2 2gt
-:nn <Leader>3 3gt
-:nn <Leader>4 4gt
-:nn <Leader>5 5gt
-:nn <Leader>6 6gt
-:nn <Leader>7 7gt
-:nn <Leader>8 8gt
-:nn <Leader>9 8gt
-:nn <Leader>0 :tablast<CR>
+" 配色方案, 可以从上面插件安装中的选择一个使用
+" set termguicolors
+colorscheme monokai " 主题
+set background=dark " 主题背景 dark-深色; light-浅色"
